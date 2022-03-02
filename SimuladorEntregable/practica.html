@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>CALCULADORA DE MACRONUTRIENTES</h1>
+
+    <form id="formulario1">
+        <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Nombre</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="nombre" placeholder="Introduzca su Nombre">
+          </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Edad</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="edad" placeholder="Introduzca su Edad">
+            </div>
+          </div>
+         <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Estatura</label>
+            <div class="col-sm-10">
+              <input type="number" class="form-control" id="estatura" placeholder="Introduzca su Estatura en CM">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Peso</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="peso" placeholder="Introduzca su peso en KG">
+            </div>
+          </div>
+
+
+     
+        <fieldset class="form-group" id="radiogenero" name ="sexo">
+          <div class="row">
+            <legend class="col-form-label col-sm-2 pt-0">sexo</legend>
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="radiogenero" id="femenino" value="femenino" checked>
+                <label class="form-check-label" for="gridRadios1">
+                 Mujer
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="radiogenero" id="masculino" value="masculino" >
+                <label class="form-check-label" for="gridRadios2">
+                  Hombre
+                </label>
+              </div>
+              
+            </div>
+          </div>
+          
+        </fieldset>
+        <form class="form-inline" id="objetivo">
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Indique su Objetivo</label><br>
+            <select class="custom-select my-1 mr-sm-2" id="objetivo">
+              <option selected>Choose...</option>
+              <option value="perder">Perder Peso</option>
+              <option value="mantenerse">Mantenerse</option>
+              <option value="ganar">Ganar Masa Muscular</option>
+            </select><br>
+          
+        </form>
+      
+
+        <form class="form-inline" id="">
+            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Indique su Nivel de Actividad Fisica</label><br>
+            <select class="custom-select my-1 mr-sm-2" id="actividadFisica">
+              <option selected>Choose...</option>
+              <option value="1">Sedentario</option>
+              <option value="2">Moderadamente Activo</option>
+              <option value="3">Muy Activo</option>
+              <option value="4">Extremadamente Activo</option>
+            </select><br>
+            <button type="button" class="btn btn-dark" onclick="calculo1()">Calcular</button>
+            <button type="button" class="btn btn-dark" onclick="limpiar()">limpiar</button>
+
+            
+        <p>Tu metabolismo Basal es el Siguiente</p><span id="resultado"></span>
+        <p>Tus Calorias de Mantenimiento son</p><span id="mantenimiento"></span>
+        <p>Tus Calorias segun tu objetivo son</p><span id="objetivo1"></span>
+        </form>
+           
+          </div>
+        </div>
+    
+
+        
+    <script src="./Proyecto/macros.js"></script>
+</body>
+</html>
