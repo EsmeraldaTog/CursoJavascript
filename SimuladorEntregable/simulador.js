@@ -80,11 +80,7 @@ function calculo1(){
   let cantidadCarbohidratos= 0
 
 
-  while ( document.getElementById('').value <= 50) {
-    alert('El peso no es valido para hacer los calculos')
-    break;
-    
-}
+ 
 
   //Algoritmo para calcular Macronutrientes
 //paso 1.- Calcular tu metabolismo basal : cantidad de calorias que gasta tu cuerpo estando en reposo
@@ -154,6 +150,7 @@ cantidadCarbohidratos= parseInt(( caloriasObjetivo - (cantidadProteinas * 4 + ca
 
 
 
+
 console.log(caloriasObjetivo)
 
 console.log(caloriasDiarias)
@@ -165,4 +162,8 @@ console.log('la cantidad de Carbohidratos a consumir deberian ser  '+cantidadCar
 document.getElementById('resultado').innerHTML= metabolismoBasal;
 document.getElementById("mantenimiento").innerHTML = caloriasDiarias;
 document.getElementById("objetivo1").innerHTML = caloriasObjetivo;
+document.getElementById("carbo").innerHTML= cantidadCarbohidratos;
+document.getElementById("prote").innerHTML =  ` ${cantidadProteinas} gr `;
+document.getElementById("grasas").innerHTML = ` ${cantidadGrasas} gr`;
+
 }
