@@ -5,8 +5,9 @@
 //se solicita los datos  de nombre, precio y existencia finaliza el ciclo hasta que se ingrese la cantidad de productos que se indico mediante el primer prompt
 // se muestra por consola los datos que contiene el arreglo
 // se muestra mediante un alert el tamaño del arreglo 
-// se realiza una busqueda dentro del arreglo de un producto solicitado mediante prompt
-
+// se realiza una busqueda dentro del arreglo de un producto solicitado mediante prompt//
+//TODOS LOS RESULTADOS SE MUESTRAN POR CONSOLA
+alert('INGRESO DE PRODUCTOS AL CATALOGO')
 
 class Producto{
 
@@ -29,6 +30,7 @@ productos.push(new Producto(prompt(' Nombre del Producto'),parseInt(prompt(' pre
 
  alert(`Se han Ingresado al Catalogo ${productos.length} productos`)
 console.log(productos);
+
 
 
 //busqueda de productos en el array
