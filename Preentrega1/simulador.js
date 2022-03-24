@@ -65,7 +65,7 @@ switch (seleccion) {
           if (selec=='si') {
           
 const productEliminar = prompt("Escriba el nombre del producto").toLowerCase(); 
-let encontrarIndice= productos.findIndex( producto=> producto.nombre==gisproductEliminar)
+let encontrarIndice= productos.findIndex( producto=> producto.nombre==productEliminar)
 console.log(encontrarIndice);
 productos.splice(encontrarIndice,1)
 console.log(productEliminar);

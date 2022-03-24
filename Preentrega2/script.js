@@ -50,6 +50,7 @@ const productosInventario = document.querySelector("#productos");
 const productosCarrito = document.querySelector("#carrito");
 const productosFila = document.querySelector("#cart");
 const bottonBorrar = document.createElement("button");
+const botonTotal= document.createElement('button')
 const total = document.querySelector("#total_cart");
 
 function pintarproductosInventario() {
@@ -109,7 +110,6 @@ if (elementosLs) {
 
 
 function pintarCarrito() {
-;
   const tbody = document.querySelector("#body__tabla");
 
   tbody.innerText = "";
@@ -132,21 +132,28 @@ function pintarCarrito() {
     tr.appendChild(nodoTd3);
     tbody.appendChild(tr);
     productosFila.appendChild(tbody);
+
+
+ bottonBorrar.classList.add("boton__borrar");
+botonTotal.classList.add("boton__total");
+botonTotal.innerText='Completar compra'
+bottonBorrar.addEventListener("click", borrarCarrito);
+botonTotal.addEventListener('click', totalCompra)
+productosFila.appendChild(botonTotal)
+productosFila.appendChild(bottonBorrar)
+
   });
 
- 
-  productosFila.appendChild(bottonBorrar);
+;
 
-  totalCompra();
+  //totalCompra();
 }
 
-bottonBorrar.addEventListener("click", borrarCarrito);
 
 function totalCompra() {
-  const total1 = carritoCompras.reduce(
-    (acumulador, elemento) => acumulador + elemento.precio,
-    0
-  );
+  
+let total1 = carritoCompras.reduce((acumulador, elemento) => acumulador + elemento.precio,0);
+ total1>= 300 ? alert("Tu compra incluye Envio Gratis!"):(alert('se te incluira el costo del Envio'), total1= total1+100 )
   total.textContent = `Total de su Compra ${total1}`;
   console.log(total);
   console.log(`Total de su compra: ${total1}`);

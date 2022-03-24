@@ -28,7 +28,7 @@
            border-radius: 10px;
        }
 
-       button{
+    .boton__borrar{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -41,3 +41,4 @@
                background-color: white;
                
            }
+
