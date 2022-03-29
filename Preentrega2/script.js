@@ -102,10 +102,7 @@ function agregarProducto(element) {
     gravity: "bottom", // `top` or `bottom`
     position: "right", // `left`, `center` or `right`
     stopOnFocus: true, // Prevents dismissing of toast on hover
-    offset: {
-      x: 50, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-      y: 10 // vertical axis - can be a number or a string indicating unity. eg: '2em'
-    },
+   
     style: {
       background: "linear-gradient(to right, #00b09b, #96c93d)",
     },
@@ -170,7 +167,7 @@ function totalCompra() {
 let total1 = carritoCompras.reduce((acumulador, elemento) => acumulador + elemento.precio,0);
 
 
- total1>= 300 ? swal({title: "Tu compra incluye envio",}):(swal({title:'La compra actual no incluye envio gratis',text:'Agrega mas productos y el envio va por nuestra cuenta'}), total1= total1+100 )
+ total1>= 300 ? swal({title: "Tu compra incluye envio",icon:"success"}):(swal({title:'La compra actual no incluye envio gratis',text:'Agrega mas productos y el envio va por nuestra cuenta', icon:'warning'}), total1= total1+100 )
   total.textContent = `Total de su Compra ${total1}`;
   console.log(total);
   console.log(`Total de su compra: ${total1}`);
