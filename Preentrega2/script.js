@@ -94,7 +94,22 @@ function agregarProducto(element) {
   //realizo una destructuracion del objeto elemento
   const { id, nombre, precio, cantidad, ...restopropiedades } = element;
   carritoCompras.push({ id, nombre, precio });
-
+  Toastify({
+    text: "Se ha agreado un producto al carrito",
+    duration: 3000,
+    newWindow: true,
+    close: true,
+    gravity: "bottom", // `top` or `bottom`
+    position: "right", // `left`, `center` or `right`
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    offset: {
+      x: 50, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+      y: 10 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+    },
+    style: {
+      background: "linear-gradient(to right, #00b09b, #96c93d)",
+    },
+  }).showToast();
   pintarCarrito();
   localStorage.setItem("carritoCompras", JSON.stringify(carritoCompras));
 }
@@ -153,7 +168,9 @@ productosFila.appendChild(bottonBorrar)
 function totalCompra() {
   
 let total1 = carritoCompras.reduce((acumulador, elemento) => acumulador + elemento.precio,0);
- total1>= 300 ? alert("Tu compra incluye Envio Gratis!"):(alert('se te incluira el costo del Envio'), total1= total1+100 )
+
+
+ total1>= 300 ? swal({title: "Tu compra incluye envio",}):(swal({title:'La compra actual no incluye envio gratis',text:'Agrega mas productos y el envio va por nuestra cuenta'}), total1= total1+100 )
   total.textContent = `Total de su Compra ${total1}`;
   console.log(total);
   console.log(`Total de su compra: ${total1}`);
