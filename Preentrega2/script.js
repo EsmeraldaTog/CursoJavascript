@@ -1,50 +1,12 @@
 const elementosLs = localStorage.getItem("carritoCompras");
 let carritoCompras = [];
 
-const productos = [
-  {
-    id: "0001",
-    nombre: "Salsa Macha Tabiche y Chapulin",
-    precio: 100,
-    imagen: "../imagesproyecto/salsatabiche.jpeg",
-    stock: 3,
-  },
-  {
-    id: "0002",
-    nombre: "Salsa Habanero Tamarindo",
-    precio: 80,
-    imagen: "../imagesproyecto/habanero.jpeg",
-    stock: 2,
-  },
-  {
-    id: "0003",
-    nombre: "Salsa Chile de Arbol y Jamaica",
-    precio: 90,
-    imagen: "../imagesproyecto/jamaica.jpeg",
-    stock: 10,
-  },
-  {
-    id: "0004",
-    nombre: "Salsa Macha de Arbol y Arandano",
-    precio: 80,
-    imagen: "../imagesproyecto/arandano.jpeg",
-    stock: 50,
-  },
-  {
-    id: "0005",
-    nombre: "Salsa Macha de Arbol y Cacahuate",
-    precio: 80,
-    imagen: "../imagesproyecto/cacahuate.jpeg",
-    stock: 50,
-  },
-  {
-    id: "0006",
-    nombre: "Salsa Chipotle",
-    precio: 80,
-    imagen: "../imagesproyecto/chipotle.jpeg",
-    stock: 50,
-  },
-];
+
+
+document.addEventListener('DOMContentLoaded', e => { fetchData() });
+
+
+
 
 const productosInventario = document.querySelector("#productos");
 const productosCarrito = document.querySelector("#carrito");
@@ -53,8 +15,18 @@ const bottonBorrar = document.createElement("button");
 const botonTotal= document.createElement('button')
 const total = document.querySelector("#total_cart");
 
-function pintarproductosInventario() {
-  productos.forEach((element) => {
+
+
+
+const fetchData = async () => {
+  const res = await fetch('data.json');
+  const data = await res.json()
+ console.log(data)
+  pintarproductosInventario(data)
+}
+
+function pintarproductosInventario(data) {
+  data.forEach((element) => {
     const productoDiv = document.createElement("div");
     productoDiv.classList.add("card", "col-sm-4", "col-lg-4");
     console.log(productoDiv);
@@ -181,4 +153,4 @@ function borrarCarrito() {
 
   localStorage.clear();
 }
-pintarproductosInventario();
+//  pintarproductosInventario(data);
